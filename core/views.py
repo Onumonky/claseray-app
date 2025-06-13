@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from core import models
 
@@ -8,9 +9,10 @@ from core import forms
 # Create your views here.
 
 
-class ListBank(generic.View):
+class ListBank(LoginRequiredMixin, generic.View):
     template_name = "core/list_bank.html"
     context = {}
+    login_url = "home:index"
 
     def get(self, request):
         self.context = {
