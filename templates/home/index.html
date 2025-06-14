@@ -33,5 +33,6 @@
                     {{ loginForm }}
                     <button type="submit" class="btn btn-success">LogIn</button>
             </form>
+            Si no tiene una cuenta: <a href="{% url 'home:signup' %}" class="btn btn-link">Click Aqui</a>
   {% endif %}  
 {% endblock content %}
