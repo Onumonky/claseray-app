@@ -1,3 +1,4 @@
+import os
 """
 Django settings for demo project.
 
@@ -99,8 +100,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "paysys_db2",
-        "USER": "pasys_user2",
-        "PASSWORD": "PAYSYS_user12",
+        "USER": "postgres",
+        "PASSWORD": "147147johan",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
@@ -152,3 +153,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta para archivos recopilados
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Carpeta con tus archivos estáticos de desarrollo
+]
+
